@@ -1,7 +1,8 @@
-package com.example.whether
+package uz.makhmudjon.whether
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.whether.R
 
 class MainActivity : AppCompatActivity() {
 

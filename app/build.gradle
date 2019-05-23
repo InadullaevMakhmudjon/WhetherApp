@@ -9,7 +9,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.whether"
+        applicationId "uz.makhmudjon.whether"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
