@@ -1,5 +1,6 @@
 package uz.makhmudjon.whether.ui.main
 
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.util.Log
 import com.google.gson.JsonObject
@@ -9,15 +10,19 @@ import retrofit2.Callback
 import retrofit2.Response
 import uz.makhmudjon.whether.db.retrofit.model.WhetherResponse
 import uz.makhmudjon.whether.db.retrofit.service.WetherService
+import uz.makhmudjon.whether.db.room.dao.WhetherDAO
+import uz.makhmudjon.whether.db.room.entity.Whether
 
 class MainRepository {
 
     val error = MutableLiveData<String>()
 
-    var onResponse:((String)->Unit)?=null
+    var onResponse:((Whether)->Unit)?=null
 
-    fun loadData(server:WetherService){
-        server.getCurrentWether("Uzbekistan")
+    fun whether(dao:WhetherDAO):LiveData<List<Whether>> = dao.getAll()
+
+    fun loadData(server:WetherService,database:WhetherDAO,name:String){
+        server.getCurrentWether(name)
             .enqueue(object:Callback<JsonObject>{
                 override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                     error.value = t.message
@@ -27,7 +32,20 @@ class MainRepository {
                     if(response.isSuccessful){
                         if(response.body()!=null){
                             val data = response.body()
-                            if(data!=null) onResponse?.invoke(data.get("location").asJsonObject.get("country").asString)
+                            if(data!=null){
+                                val result = Whether(
+                                    data.get("location").asJsonObject.get("country").asString,
+                                    data.get("location").asJsonObject.get("region").asString,
+                                    data.get("location").asJsonObject.get("localtime").asString,
+                                    data.get("current").asJsonObject.get("temp_c").asFloat,
+                                    data.get("current").asJsonObject.get("humidity").asInt,
+                                    data.get("current").asJsonObject.get("wind_degree").asInt,
+                                    data.get("current").asJsonObject.get("condition").asJsonObject.get("icon").asString)
+                                database.insert(result)
+
+                                if(onResponse==null)
+                                onResponse?.invoke(result)
+                            }
                             else Log.e("ThisIsMyName","failed")
                         }else{
                             Log.e("ThisIsMyName","EmptyBody")

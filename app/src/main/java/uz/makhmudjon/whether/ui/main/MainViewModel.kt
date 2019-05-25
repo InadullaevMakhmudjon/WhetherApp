@@ -10,14 +10,26 @@ import uz.makhmudjon.whether.util.ObservableViewModel
 class MainViewModel(val app: Application):ObservableViewModel(app) {
     val repository = MainRepository()
 
-    @Bindable
-    val editText = MutableLiveData<String>()
+    val whether = repository.whether((app as App).whetherDAO)
 
-    fun clicked() = repository.loadData((app as App).whetherSetvice)
+    var image:((String)->Unit)?=null
+    val temp = MutableLiveData<String>()
+    val country = MutableLiveData<String>()
+    val region = MutableLiveData<String>()
+    val date = MutableLiveData<String>()
+    val time = MutableLiveData<String>()
+
+    fun clicked() = repository.loadData((app as App).whetherSetvice,app.whetherDAO,"Uzbekistan")
 
     init {
         repository.onResponse = {
-            Toast.makeText(app,it,Toast.LENGTH_SHORT).show()
+            temp.value = it.temp.toInt().toString()
+            country.value = it.country
+            region.value = it.region
+            date.value = it.localtime.split(" ")[0]
+            time.value = it.localtime.split(" ")[1]
+            image?.invoke(it.icon)
         }
+
     }
 }

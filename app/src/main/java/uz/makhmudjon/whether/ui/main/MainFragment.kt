@@ -8,8 +8,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.whether.R
 import com.example.whether.databinding.FragmentMainBinding
+import kotlinx.android.synthetic.main.fragment_main.view.*
+
 
 class MainFragment: Fragment() {
 
@@ -24,5 +28,17 @@ class MainFragment: Fragment() {
         val viewModel = ViewModelProviders.of(this,MainVMFactory(this.activity!!))[MainViewModel::class.java]
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+
+        viewModel.image = {
+            Glide.with(this)
+                .load("https:$it").into(binding.root.imageholder)
+        }
+
+        viewModel.whether.observe(this, Observer {
+                if(it!=null){
+
+                }
+        })
+
     }
 }
