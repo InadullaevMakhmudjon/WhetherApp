@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="viewModel"
+                  type="uz.makhmudjon.whether.ui.main.MainViewModel"/>
+    </data>
+
+    <RelativeLayout
+            android:background="@drawable/background"
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:layout_height="match_parent">
+
+        <Button android:layout_width="wrap_content"
+                android:text="ClickMe"
+                android:onClick="@{ ()->viewModel.clicked() }"
+                android:layout_height="wrap_content"/>
+
+         <TextView android:layout_width="wrap_content"
+                   android:text="2019-05-25"
+                   android:textStyle="bold"
+                   android:textSize="25sp"
+                   android:id="@+id/date"
+                   android:layout_centerHorizontal="true"
+                   android:textColor="@android:color/white"
+                   android:layout_height="wrap_content"/>
+
+        <RelativeLayout android:layout_width="wrap_content"
+                        android:id="@+id/header"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/date"
+                        android:layout_height="wrap_content">
+
+            <TextView android:layout_width="wrap_content"
+                      android:textSize="75sp"
+                      android:text="50&#x2103;"
+                      android:id="@+id/cell"
+                      android:textColor="@android:color/white"
+                      android:layout_height="wrap_content"/>
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:orientation="vertical"
+                          android:id="@+id/container"
+                          android:layout_centerVertical="true"
+                          android:layout_toRightOf="@id/cell"
+                          android:layout_marginLeft="10dp"
+                          android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/white"
+                          android:text="Uzbekistan"
+                          android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:textSize="20sp"
+                          android:textColor="@android:color/white"
+                          android:text="Tashkent"
+                          android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:textSize="18sp"
+                          android:textColor="@android:color/white"
+                          android:text="5:39"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_toRightOf="@+id/container"
+                       android:layout_centerVertical="true"
+                       android:src="@drawable/day"
+                       android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_below="@id/header"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_country"
+                android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</layout>
