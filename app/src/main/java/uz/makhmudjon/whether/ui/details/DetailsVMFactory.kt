@@ -1,13 +1,13 @@
-package uz.makhmudjon.whether.ui.main
+package uz.makhmudjon.whether.ui.details
 
-import android.app.Activity
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
+import uz.makhmudjon.whether.App
 
-class MainVMFactory(val app:Activity): ViewModelProvider.NewInstanceFactory() {
+class DetailsVMFactory(val app:App): ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return MainViewModel(app.application) as T
+        return DetailsViewModel(app) as T
     }
 }

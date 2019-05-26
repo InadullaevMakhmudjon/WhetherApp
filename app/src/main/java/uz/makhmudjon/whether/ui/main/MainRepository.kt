@@ -33,17 +33,19 @@ class MainRepository {
                         if(response.body()!=null){
                             val data = response.body()
                             if(data!=null){
-                                val result = Whether(
-                                    data.get("location").asJsonObject.get("country").asString,
-                                    data.get("location").asJsonObject.get("region").asString,
-                                    data.get("location").asJsonObject.get("localtime").asString,
-                                    data.get("current").asJsonObject.get("temp_c").asFloat,
-                                    data.get("current").asJsonObject.get("humidity").asInt,
-                                    data.get("current").asJsonObject.get("wind_degree").asInt,
-                                    data.get("current").asJsonObject.get("condition").asJsonObject.get("icon").asString)
+                                val result = Whether()
+
+                                result.country = data.get("location").asJsonObject.get("country").asString
+                                result.region = data.get("location").asJsonObject.get("region").asString
+                                result.localtime = data.get("location").asJsonObject.get("localtime").asString
+                                result.temp = data.get("current").asJsonObject.get("temp_c").asDouble.toInt()
+                                result.humidity = data.get("current").asJsonObject.get("humidity").asInt
+                                result.wind = data.get("current").asJsonObject.get("wind_degree").asInt
+                                result.icon = data.get("current").asJsonObject.get("condition").asJsonObject.get("icon").asString
+
                                 database.insert(result)
 
-                                if(onResponse==null)
+                                if(result.country == "Uzbekistan")
                                 onResponse?.invoke(result)
                             }
                             else Log.e("ThisIsMyName","failed")

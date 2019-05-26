@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_alignParentLeft="true"
+              android:text="Thursday"
+              android:id="@+id/date"
+              android:layout_centerVertical="true"
+              android:textSize="@dimen/temp_size"
+              android:textColor="@android:color/white"
+              android:layout_height="wrap_content"/>
+
+    <ImageView android:layout_width="54dp"
+               android:layout_centerHorizontal="true"
+               android:src="@drawable/day"
+               android:layout_centerVertical="true"
+               android:id="@+id/image"
+               android:layout_height="44dp"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_alignParentRight="true"
+              android:text="57"
+              android:id="@+id/min"
+              android:textSize="@dimen/temp_size"
+              android:layout_centerVertical="true"
+              android:layout_marginLeft="15dp"
+              android:textColor="@android:color/white"
+              android:layout_height="wrap_content"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_toLeftOf="@+id/min"
+              android:text="72"
+              android:id="@+id/max"
+              android:layout_centerVertical="true"
+              android:textSize="@dimen/temp_size"
+              android:textColor="@android:color/white"
+              android:layout_height="wrap_content"/>
+
+</RelativeLayout>

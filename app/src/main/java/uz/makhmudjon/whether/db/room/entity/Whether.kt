@@ -4,16 +4,15 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
 @Entity
-class Whether(
-    var country: String,
-    var region: String,
-    var localtime: String,
-    var temp: Float,
-    var humidity: Int,
-    var wind: Int,
-    var icon: String
-) {
+class Whether {
     @PrimaryKey(autoGenerate = true)
-    var id:Int=1
+    var id:Int=0
 
+    var country = ""
+    var region = ""
+    var localtime=""
+    var temp = 0
+    var humidity = 0
+    var wind = 0
+    var icon = ""
 }

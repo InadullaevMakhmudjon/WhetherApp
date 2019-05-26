@@ -3,6 +3,7 @@ package uz.makhmudjon.whether.ui
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.whether.R
+import uz.makhmudjon.whether.App
 import uz.makhmudjon.whether.di.AppModule
 
 class MainActivity : AppCompatActivity() {

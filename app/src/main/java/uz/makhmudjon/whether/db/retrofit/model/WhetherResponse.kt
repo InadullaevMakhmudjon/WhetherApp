@@ -30,6 +30,26 @@ data class Condition(
     val code:Int
 )
 
+data class CurrentHeader(
+    val country:String,
+    val status:String,
+    val temp:Int,
+    val date:String
+)
+
+data class FutureWhether(
+    var date:String,
+    var image:String,
+    var maxTemp:String,
+    var minTemp:String
+)
+
+data class CurrentHistory(
+    var time:String,
+    var image:String,
+    var temp:String
+)
+
 data class WhetherResponse(
     var location:Location,
     var current: Current

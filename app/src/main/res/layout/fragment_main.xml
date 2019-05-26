@@ -14,11 +14,6 @@
             android:padding="16dp"
             android:layout_height="match_parent">
 
-        <Button android:layout_width="wrap_content"
-                android:text="ClickMe"
-                android:onClick="@{ ()->viewModel.clicked() }"
-                android:layout_height="wrap_content"/>
-
          <TextView android:layout_width="wrap_content"
                    android:text="@{viewModel.date}"
                    android:textStyle="bold"
@@ -82,6 +77,8 @@
         <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_below="@id/header"
+                android:overScrollMode="never"
+                android:id="@+id/whethers"
                 app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_country"
                 android:layout_height="match_parent">

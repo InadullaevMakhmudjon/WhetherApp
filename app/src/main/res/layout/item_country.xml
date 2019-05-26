@@ -9,8 +9,6 @@
             android:layout_width="match_parent"
             android:layout_marginBottom="16dp"
             app:cardBackgroundColor="#0C000000"
-            app:strokeColor="@android:color/white"
-            app:strokeWidth="1dp"
             app:cardCornerRadius="10dp"
             android:layout_height="wrap_content">
         <RelativeLayout android:layout_width="match_parent"
@@ -23,28 +21,37 @@
                 android:layout_centerHorizontal="true"
                 android:layout_height="wrap_content">
 
-        <LinearLayout android:layout_width="wrap_content"
+        <LinearLayout android:layout_width="150dp"
                       android:orientation="vertical"
                       android:id="@+id/details"
                       android:layout_height="wrap_content">
 
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
                       android:textSize="25sp"
                       android:textStyle="bold"
                       android:textColor="@android:color/white"
-                      android:text="Uzbekistan"
+                      android:text="Uzbekinstan"
+                      android:maxLines="1"
+                      android:ellipsize="end"
+                      android:id="@+id/country"
                       android:layout_height="wrap_content"/>
 
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
                       android:textSize="20sp"
                       android:textColor="@android:color/white"
                       android:text="Tashkent"
+                      android:maxLines="1"
+                      android:ellipsize="end"
+                      android:id="@+id/region"
                       android:layout_height="wrap_content"/>
 
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
                       android:textSize="18sp"
                       android:textColor="@android:color/white"
                       android:text="5:39"
+                      android:maxLines="1"
+                      android:ellipsize="end"
+                      android:id="@+id/time"
                       android:layout_height="wrap_content"/>
 
         </LinearLayout>
@@ -76,6 +83,7 @@
                     <TextView android:layout_width="wrap_content"
                               android:textColor="@android:color/white"
                               android:text="90%"
+                              android:id="@+id/humidity"
                               android:textSize="20sp"
                               android:layout_marginLeft="5dp"
                               android:layout_height="wrap_content"/>
@@ -94,18 +102,19 @@
                               android:textColor="@android:color/white"
                               android:text="10%"
                               android:textSize="20sp"
+                              android:id="@+id/wind"
                               android:layout_marginLeft="5dp"
                               android:layout_height="wrap_content"/>
                 </LinearLayout>
 
             </LinearLayout>
 
-            <ImageView android:layout_width="wrap_content"
+            <ImageView android:layout_width="64dp"
+                       android:id="@+id/image"
                        android:layout_toRightOf="@id/containerdata"
                        android:layout_centerVertical="true"
-                       android:src="@drawable/day"
                        android:layout_centerHorizontal="true"
-                       android:layout_height="wrap_content"/>
+                       android:layout_height="64dp"/>
 
         </RelativeLayout>
 
