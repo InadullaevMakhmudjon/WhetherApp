@@ -11,6 +11,8 @@ class DetailsViewModel(val app:App):ObservableViewModel(app) {
 
     val repository = DetailsRepository()
 
+    val isLoading = repository.isLoading
+
     var onFutureLoaded:((List<FutureWhether>, CurrentHeader)->Unit)?=null
 
     var onHistoryLoaded: ((MutableList<CurrentHistory>)->Unit)?=null

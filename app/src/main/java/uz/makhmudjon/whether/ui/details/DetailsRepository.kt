@@ -15,11 +15,14 @@ class DetailsRepository {
 
     val error = MutableLiveData<String>()
 
+    val isLoading = MutableLiveData<Boolean>()
+
     var onFutureResponse:((List<FutureWhether>, CurrentHeader)->Unit)?=null
 
     var onHistoryResponse: ((MutableList<CurrentHistory>)->Unit)?=null
 
     fun loadFuture(server: WetherService, name:String,number:Int){
+        isLoading.value = true
         server.getFutureWhether(name,number)
             .enqueue(object: Callback<JsonObject> {
                 override fun onFailure(call: Call<JsonObject>, t: Throwable) {
@@ -27,6 +30,7 @@ class DetailsRepository {
                 }
 
                 override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+                    isLoading.value = false
                     if(response.isSuccessful){
                         if(response.body()!=null){
                             val data = response.body()
@@ -64,13 +68,14 @@ class DetailsRepository {
     }
 
     fun loadHistory(server: WetherService,country: String,date:String){
-
+        isLoading.value = true
         server.getHistory(country,date).enqueue(object:Callback<JsonObject>{
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                 error.value = t.message
             }
 
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+                isLoading.value = false
                 if(response.isSuccessful){
                     val data = response.body()
                     if(data!=null){

@@ -12,6 +12,8 @@ class MainViewModel(val app: Application):ObservableViewModel(app) {
 
     val whether = repository.whether((app as App).database.whetherdao)
 
+    val isLoading = repository.isloading
+
     var image:((String)->Unit)?=null
     val temp = MutableLiveData<String>()
     val country = MutableLiveData<String>()

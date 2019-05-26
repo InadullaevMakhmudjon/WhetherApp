@@ -17,11 +17,14 @@ class MainRepository {
 
     val error = MutableLiveData<String>()
 
+    val isloading = MutableLiveData<Boolean>()
+
     var onResponse:((Whether)->Unit)?=null
 
     fun whether(dao:WhetherDAO):LiveData<List<Whether>> = dao.getAll()
 
     fun loadData(server:WetherService,database:WhetherDAO,name:String){
+        isloading.value = true
         server.getCurrentWether(name)
             .enqueue(object:Callback<JsonObject>{
                 override fun onFailure(call: Call<JsonObject>, t: Throwable) {
@@ -29,6 +32,7 @@ class MainRepository {
                 }
 
                 override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+                    isloading.value = false
                     if(response.isSuccessful){
                         if(response.body()!=null){
                             val data = response.body()
@@ -59,4 +63,6 @@ class MainRepository {
 
             })
     }
+
+
 }

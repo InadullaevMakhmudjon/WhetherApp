@@ -44,7 +44,6 @@
 
            </LinearLayout>
 
-
            <RelativeLayout android:layout_width="match_parent"
                            android:layout_below="@id/details"
                            android:id="@+id/todayDetails"
@@ -61,6 +60,7 @@
                      android:layout_height="0.5dp"
                      android:layout_below="@id/today"
                      android:layout_marginTop="10dp"
+                     android:visibility="@{viewModel.isLoading? View.GONE: View.VISIBLE}"
                      android:background="@android:color/white"/>
            </RelativeLayout>
 
@@ -79,6 +79,7 @@
                   android:layout_height="0.5dp"
                   android:layout_below="@id/fullDetails"
                   android:layout_marginTop="10dp"
+                  android:visibility="@{viewModel.isLoading?View.GONE:View.VISIBLE}"
                   android:id="@+id/splitter"
                   android:background="@android:color/white"/>
 
@@ -91,12 +92,11 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:layout_height="match_parent"/>
 
-
     <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"
             app:lottie_rawRes="@raw/plane"
             app:lottie_loop="true"
-            android:visibility="gone"
+            android:visibility="@{viewModel.isLoading? View.VISIBLE : View.GONE}"
             app:lottie_autoPlay="true"
             android:layout_height="match_parent"/>
 

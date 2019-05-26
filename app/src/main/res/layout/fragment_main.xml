@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 app:lottie_rawRes="@raw/plane"
                 app:lottie_loop="true"
-                android:visibility="gone"
+                android:visibility="@{viewModel.isLoading? View.VISIBLE : View.GONE}"
                 app:lottie_autoPlay="true"
                 android:layout_height="match_parent"/>
 
