@@ -1,16 +1,18 @@
 package uz.makhmudjon.whether.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Dialog
 import android.os.Bundle
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.whether.R
-import uz.makhmudjon.whether.App
-import uz.makhmudjon.whether.di.AppModule
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
     }
 
 }

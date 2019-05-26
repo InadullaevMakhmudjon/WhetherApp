@@ -91,5 +91,14 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:layout_height="match_parent"/>
 
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            app:lottie_rawRes="@raw/plane"
+            app:lottie_loop="true"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            android:layout_height="match_parent"/>
+
 </RelativeLayout>
 </layout>

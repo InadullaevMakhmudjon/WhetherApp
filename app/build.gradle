@@ -68,6 +68,9 @@ dependencies {
     //Material
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 
+    //Lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
     //Test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
