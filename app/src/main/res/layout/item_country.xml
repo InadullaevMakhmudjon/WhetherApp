@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <android.support.design.card.MaterialCardView
+    <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_marginBottom="16dp"
             app:cardBackgroundColor="#0C000000"
@@ -119,6 +119,6 @@
         </RelativeLayout>
 
         </RelativeLayout>
-    </android.support.design.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

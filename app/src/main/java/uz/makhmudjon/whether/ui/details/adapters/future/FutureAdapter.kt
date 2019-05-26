@@ -1,7 +1,7 @@
 package uz.makhmudjon.whether.ui.details.adapters.future
 
 import android.annotation.SuppressLint
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
@@ -11,7 +11,7 @@ import uz.makhmudjon.whether.db.retrofit.model.FutureWhether
 import uz.makhmudjon.whether.util.toDayOfWeek
 import java.text.SimpleDateFormat
 
-class FutureAdapter: RecyclerView.Adapter<FViewHolder>() {
+class FutureAdapter: androidx.recyclerview.widget.RecyclerView.Adapter<FViewHolder>() {
 
     var data = listOf<FutureWhether>()
 

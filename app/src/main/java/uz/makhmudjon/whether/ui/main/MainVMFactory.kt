@@ -1,8 +1,8 @@
 package uz.makhmudjon.whether.ui.main
 
 import android.app.Activity
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 
 class MainVMFactory(val app:Activity): ViewModelProvider.NewInstanceFactory() {
 

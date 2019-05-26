@@ -1,8 +1,8 @@
 package uz.makhmudjon.whether.util
 
-import android.arch.persistence.room.Delete
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Update
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Update
 
 interface BasicDAO<T> {
 

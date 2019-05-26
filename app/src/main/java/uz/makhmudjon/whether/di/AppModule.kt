@@ -1,6 +1,6 @@
 package uz.makhmudjon.whether.di
 
-import android.arch.persistence.room.Room
+import androidx.room.Room
 import uz.makhmudjon.whether.App
 import uz.makhmudjon.whether.db.retrofit.AppRetrofit
 import uz.makhmudjon.whether.db.room.AppDatabase

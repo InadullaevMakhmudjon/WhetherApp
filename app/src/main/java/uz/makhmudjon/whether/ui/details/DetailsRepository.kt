@@ -1,6 +1,6 @@
 package uz.makhmudjon.whether.ui.details
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import android.util.Log
 import com.google.gson.JsonObject
 import retrofit2.Call

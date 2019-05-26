@@ -14,7 +14,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -32,15 +32,15 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //noinspection GradleCompatible
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     // LiveData & ViewModel
-    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
 
     // Retrofit 2
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -54,13 +54,13 @@ dependencies {
     compileOnly "org.glassfish:javax.annotation:3.1.1"
 
     //Navigation
-    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0-rc02'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0-rc02'
 
     //Room
-    implementation 'android.arch.persistence.room:runtime:1.1.1'
-    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
-    kapt 'android.arch.persistence.room:compiler:1.1.1'
+    implementation 'androidx.room:room-runtime:2.0.0'
+    annotationProcessor 'androidx.room:room-compiler:2.0.0'
+    kapt 'androidx.room:room-compiler:2.0.0'
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:3.7.0'
@@ -70,7 +70,7 @@ dependencies {
 
     //Test
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
 }

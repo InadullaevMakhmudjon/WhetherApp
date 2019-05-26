@@ -1,7 +1,7 @@
 package uz.makhmudjon.whether.ui.details
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import uz.makhmudjon.whether.App
 
 class DetailsVMFactory(val app:App): ViewModelProvider.NewInstanceFactory() {

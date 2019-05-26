@@ -1,8 +1,8 @@
 package uz.makhmudjon.whether.ui.main
 
 import android.app.Application
-import android.arch.lifecycle.MutableLiveData
-import android.databinding.Bindable
+import androidx.lifecycle.MutableLiveData
+import androidx.databinding.Bindable
 import android.widget.Toast
 import uz.makhmudjon.whether.App
 import uz.makhmudjon.whether.util.ObservableViewModel

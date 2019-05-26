@@ -1,11 +1,11 @@
 package uz.makhmudjon.whether.ui.main
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +20,7 @@ import uz.makhmudjon.whether.ui.details.DetailsViewModel
 import uz.makhmudjon.whether.ui.main.adapter.WhetherAdapter
 
 
-class MainFragment: Fragment() {
+class MainFragment: androidx.fragment.app.Fragment() {
 
     lateinit var binding:FragmentMainBinding
 

@@ -64,12 +64,12 @@
                      android:background="@android:color/white"/>
            </RelativeLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:overScrollMode="never"
                     android:layout_below="@id/todayDetails"
-                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="horizontal"
                     tools:listitem="@layout/item_today"
                     android:id="@+id/fullDetails"
@@ -82,13 +82,13 @@
                   android:id="@+id/splitter"
                   android:background="@android:color/white"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/futurecontainer"
                     android:layout_width="match_parent"
                     tools:listitem="@layout/item_future"
                     android:overScrollMode="never"
                     android:layout_below="@id/splitter"
-                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:layout_height="match_parent"/>
 
 </RelativeLayout>

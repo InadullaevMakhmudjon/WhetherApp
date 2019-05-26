@@ -1,7 +1,7 @@
 package uz.makhmudjon.whether.ui.main.adapter
 
 import android.annotation.SuppressLint
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.item_country.view.*
 import uz.makhmudjon.whether.db.room.entity.Whether
 
 
-class WhetherAdapter: RecyclerView.Adapter<WhetherVH>() {
+class WhetherAdapter: androidx.recyclerview.widget.RecyclerView.Adapter<WhetherVH>() {
 
     var data = listOf<Whether>()
 

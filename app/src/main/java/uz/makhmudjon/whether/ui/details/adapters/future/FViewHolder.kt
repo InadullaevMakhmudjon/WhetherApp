@@ -1,6 +1,6 @@
 package uz.makhmudjon.whether.ui.details.adapters.future
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 
-class FViewHolder(v: View) : RecyclerView.ViewHolder(v)
+class FViewHolder(v: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(v)

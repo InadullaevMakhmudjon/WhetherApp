@@ -1,7 +1,7 @@
 package uz.makhmudjon.whether.ui.main
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import android.util.Log
 import com.google.gson.JsonObject
 import com.squareup.moshi.Json

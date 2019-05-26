@@ -1,10 +1,10 @@
 package uz.makhmudjon.whether.util
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.ViewModel
-import android.databinding.Observable
-import android.databinding.PropertyChangeRegistry
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import androidx.databinding.Observable
+import androidx.databinding.PropertyChangeRegistry
 
 open class ObservableViewModel(app:Application): AndroidViewModel(app), Observable {
 

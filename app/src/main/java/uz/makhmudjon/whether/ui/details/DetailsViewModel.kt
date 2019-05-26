@@ -1,6 +1,6 @@
 package uz.makhmudjon.whether.ui.details
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import uz.makhmudjon.whether.App
 import uz.makhmudjon.whether.db.retrofit.model.CurrentHeader
 import uz.makhmudjon.whether.db.retrofit.model.CurrentHistory

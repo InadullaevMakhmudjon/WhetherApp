@@ -1,7 +1,7 @@
 package uz.makhmudjon.whether.ui.details.adapters.today
 
 import android.annotation.SuppressLint
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
@@ -9,7 +9,7 @@ import com.example.whether.R
 import kotlinx.android.synthetic.main.item_today.view.*
 import uz.makhmudjon.whether.db.retrofit.model.CurrentHistory
 
-class TodayAdapter: RecyclerView.Adapter<TViewHolder>() {
+class TodayAdapter: androidx.recyclerview.widget.RecyclerView.Adapter<TViewHolder>() {
 
     var data = listOf<CurrentHistory>()
 
